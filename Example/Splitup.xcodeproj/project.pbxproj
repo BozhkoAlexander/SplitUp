@@ -28,12 +28,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0142F3391FD5288BE95E4239 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		19BBDAFED4B94450BDEBF172 /* Splitup.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = Splitup.podspec; path = ../Splitup.podspec; sourceTree = "<group>"; };
+		0142F3391FD5288BE95E4239 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		19BBDAFED4B94450BDEBF172 /* Splitup.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Splitup.podspec; path = ../Splitup.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1DCAABC59CF8BE0BCB670621 /* Pods-Splitup_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splitup_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Splitup_Example/Pods-Splitup_Example.release.xcconfig"; sourceTree = "<group>"; };
 		2690403245B2355EF1D25C7C /* Pods-Splitup_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splitup_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Splitup_Tests/Pods-Splitup_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		389BB341F0D56800B16EB4A8 /* Pods-Splitup_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splitup_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Splitup_Example/Pods-Splitup_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		53EF5D5019C9BA98E704BC84 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		53EF5D5019C9BA98E704BC84 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Splitup_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Splitup_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };

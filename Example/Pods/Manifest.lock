@@ -1,0 +1,16 @@
+PODS:
+  - Splitup (0.1.0)
+
+DEPENDENCIES:
+  - Splitup (from `../`)
+
+EXTERNAL SOURCES:
+  Splitup:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Splitup: 22f7af723219fa75deeefa93a664f40f6551282e
+
+PODFILE CHECKSUM: 9fc975e454c2ac5359faa310463481d11d3342f9
+
+COCOAPODS: 1.5.3

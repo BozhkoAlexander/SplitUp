@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Splitup'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of Splitup.'
+  s.version          = '0.1.1'
+  s.summary          = 'Splitup serves to add vertical split view controllers to the iOS application'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,19 +18,21 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Splitup is Swift library which serves to add vertical split view controllers to the iOS application.
                        DESC
 
-  s.homepage         = 'https://github.com/alexander.bozhko@filmgrail.com/Splitup'
+  s.homepage         = 'https://github.com/BozhkoAlexander/Splitup'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'alexander.bozhko@filmgrail.com' => 'alexander.bozhko@filmgrail.com' }
-  s.source           = { :git => 'https://github.com/alexander.bozhko@filmgrail.com/Splitup.git', :tag => s.version.to_s }
+  s.author           = { 'BozhkoAlexander' => 'alexander.bozhko@filmgrail.com' }
+  s.source           = { :git => 'https://github.com/BozhkoAlexander/Splitup.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
+  s.swift_version = '4.2'
 
   s.source_files = 'Splitup/Classes/**/*'
+  #s.resources = ['Splitup/Assets/*']
   
   # s.resource_bundles = {
   #   'Splitup' => ['Splitup/Assets/*.png']

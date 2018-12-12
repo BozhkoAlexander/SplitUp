@@ -1,0 +1,6 @@
+framework module Splitup {
+  umbrella header "Splitup-umbrella.h"
+
+  export *
+  module * { export * }
+}

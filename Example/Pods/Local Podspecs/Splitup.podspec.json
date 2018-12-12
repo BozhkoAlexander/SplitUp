@@ -1,0 +1,22 @@
+{
+  "name": "Splitup",
+  "version": "0.1.0",
+  "summary": "A short description of Splitup.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/alexander.bozhko@filmgrail.com/Splitup",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "alexander.bozhko@filmgrail.com": "alexander.bozhko@filmgrail.com"
+  },
+  "source": {
+    "git": "https://github.com/alexander.bozhko@filmgrail.com/Splitup.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Splitup/Classes/**/*"
+}
