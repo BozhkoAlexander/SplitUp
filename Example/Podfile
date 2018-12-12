@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Splitup_Example' do
+  pod 'Splitup', :path => '../'
+
+  target 'Splitup_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
