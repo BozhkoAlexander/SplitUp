@@ -1,22 +1,23 @@
 {
   "name": "Splitup",
-  "version": "0.1.0",
-  "summary": "A short description of Splitup.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/alexander.bozhko@filmgrail.com/Splitup",
+  "version": "0.1.1",
+  "summary": "Splitup serves to add vertical split view controllers to the iOS application",
+  "description": "Splitup is Swift library which serves to add vertical split view controllers to the iOS application.",
+  "homepage": "https://github.com/BozhkoAlexander/Splitup",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "alexander.bozhko@filmgrail.com": "alexander.bozhko@filmgrail.com"
+    "BozhkoAlexander": "alexander.bozhko@filmgrail.com"
   },
   "source": {
-    "git": "https://github.com/alexander.bozhko@filmgrail.com/Splitup.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/BozhkoAlexander/Splitup.git",
+    "tag": "0.1.1"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
+  "swift_version": "4.2",
   "source_files": "Splitup/Classes/**/*"
 }

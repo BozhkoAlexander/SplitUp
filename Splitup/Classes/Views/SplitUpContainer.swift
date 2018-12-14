@@ -22,13 +22,13 @@ public class SplitUpContainer: UIView {
         
         let position: Position
         
-        let rollType: RollIndicatorView.RollType
-        
+        var animateRollIndicator: Bool
+                
         var closeButtonImage: UIImage?
         
-        public init(position: Position, rollType: RollIndicatorView.RollType = .line, closeButtonImage: UIImage?) {
+        public init(position: Position, animateRollIndicator: Bool = false, closeButtonImage: UIImage?) {
             self.position = position
-            self.rollType = rollType
+            self.animateRollIndicator = animateRollIndicator
             self.closeButtonImage = closeButtonImage
         }
         
@@ -108,8 +108,12 @@ public class SplitUpContainer: UIView {
     }
     
     private func setupRollIndicator() {
-        let view = RollIndicatorView(rollType: config.rollType)
+        let view = RollIndicatorView()
         view.tintColor = UIColor.lightGray
+        
+        if config.animateRollIndicator {
+            view.setState(.arrow, animated: false)
+        }
         
         addSubview(view)
         rollIndicator = view
@@ -139,14 +143,16 @@ public class SplitUpContainer: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
+        rollIndicator?.center.x = bounds.midX
+        rollIndicator?.frame.origin.y = 0
+        
         if config.position == .front {
-            let rollHeight = RollIndicatorView.heightForType(rollIndicator!.rollType)
-            rollIndicator?.frame = CGRect(x: 0, y: 0, width: bounds.width, height: rollHeight)
-            if config.rollType == .line {
-                contentView.frame = bounds
+            if config.animateRollIndicator, let roll = rollIndicator {
+                contentView.frame = CGRect(x: 0, y: roll.frame.maxY, width: bounds.width, height: bounds.height - roll.frame.maxY)
             } else {
-                contentView.frame = CGRect(x: 0, y: rollHeight, width: bounds.width, height: bounds.height - rollHeight)
+                contentView.frame = bounds
             }
+
             layer.shadowPath = UIBezierPath(roundedRect: contentView.frame, cornerRadius: contentView.layer.cornerRadius).cgPath
             
             closeButton?.frame.size = CGSize(width: 64, height: 64)

@@ -8,89 +8,144 @@
 
 import UIKit
 
-public class RollIndicatorView: UIView {
+open class RollIndicatorView: UIView {
     
-    public enum RollType {
-        
-        case line
+    public enum State {
         
         case arrow
         
+        case line
+        
+    }
+    
+    open override class var layerClass: AnyClass {
+        return CAShapeLayer.self
     }
     
     // MARK: Public properties
     
-    public class func heightForType(_ rollType: RollType) -> CGFloat {
-        switch rollType {
-        case .line: return 18
-        case .arrow: return 36
-            
+    public static let size = CGSize(width: 48, height: 24)
+    
+    public var state: State = .line
+    
+    open override var frame: CGRect {
+        get {
+            return super.frame
+        }
+        set {
+            super.frame = CGRect(origin: newValue.origin, size: RollIndicatorView.size)
         }
     }
     
-    public var rollType: RollType
-    
-    public var progress: CGFloat = 0 {
-        didSet {
-            guard oldValue != progress else { return }
-            setNeedsDisplay()
+    open override var tintColor: UIColor! {
+        get {
+            return super.tintColor
         }
+        set {
+            super.tintColor = newValue
+            shapeLayer.strokeColor = newValue.cgColor
+        }
+    }
+    
+    // MARK: Pirvate properties
+    
+    private var shapeLayer: CAShapeLayer! {
+        return layer as? CAShapeLayer
+    }
+    
+    private func setupShapeLayer() {
+        shapeLayer.strokeColor = tintColor.cgColor
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.lineWidth = 4
+        shapeLayer.lineCap = .round
+        
+        shapeLayer.path = currentPath.cgPath
     }
     
     // MARK: Life cycle
     
-    public init(rollType: RollType) {
-        self.rollType = rollType
-        super.init(frame: .zero)
+    public init() {
+        super.init(frame: CGRect(origin: .zero, size: RollIndicatorView.size))
         
         backgroundColor = .clear
+        setupShapeLayer()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         return nil
     }
     
-    // MARK: Draw
+    // MARK: Paths
     
-    public override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        
-        let pr = rollType == .arrow ? progress : 1
-        let w: CGFloat = 48
-        let h: CGFloat = 4
-        
-        let x1 = round(0.5 * (rect.width - w))
-        let x2 = x1 + round(0.5 * w)
-        let x3 = x1 + w
-        let y1 = round(rect.height * 1/3)
-        let y2 = round(rect.height * 0.5)
-        let y3 = round(rect.height * 2/3)
-        
-        var p1 = CGPoint(x: x1, y: y3)
-        var p2 = CGPoint(x: x2, y: y1)
-        var p3 = CGPoint(x: x3, y: y3)
-        
-        p1.y -= round((y3 - y2) * pr)
-        p2.y += round((y2 - y1) * pr)
-        p3.y -= round((y3 - y2) * pr)
-        
-        let figure = UIBezierPath()
-        figure.lineWidth = h
-        figure.lineCapStyle = .round
-        figure.move(to: p1)
-        figure.addLine(to: p2)
-        figure.addLine(to: p3)
-        
-        tintColor?.setStroke()
-        figure.stroke()
+    private var currentPath: UIBezierPath {
+        return path(for: state)
     }
     
-    public func setProgressAnimated(_ progress: CGFloat) {
-        let anim = CABasicAnimation(keyPath: "progress")
-        anim.fromValue = self.progress
-        anim.toValue = progress
-        anim.duration = 0.25
-        layer.add(anim, forKey: "progress")
+    private func path(for state: State) -> UIBezierPath {
+        switch state {
+        case .line: return linePath(for: bounds)
+        case .arrow: return arrowPath(for: bounds)
+        }
+    }
+    
+    private func linePath(for rect: CGRect) -> UIBezierPath {
+        let lineWidth = shapeLayer.lineWidth
+        let path = UIBezierPath()
+        
+        path.move(to: CGPoint(x: lineWidth, y: rect.midY))
+        path.addLine(to: CGPoint(x: rect.midX, y: rect.midY))
+        path.addLine(to: CGPoint(x: rect.width - lineWidth, y: rect.midY))
+        
+        return path
+    }
+    
+    private func arrowPath(for rect: CGRect) -> UIBezierPath {
+        let path = UIBezierPath()
+        let res = calculate(for: rect)
+        
+        path.move(to: CGPoint(x: rect.midX - res.a, y: rect.midY))
+        path.addLine(to: CGPoint(x: rect.midX, y: rect.midY - res.dY))
+        path.addLine(to: CGPoint(x: rect.midX + res.a, y: rect.midY))
+        
+        return path
+    }
+    
+    // MARK: Calculation
+    
+    private typealias Calculation = (a: CGFloat, dY: CGFloat)
+    
+    private func calculate(for rect: CGRect) -> Calculation {
+        let c = rect.midX - shapeLayer.lineWidth
+        let angle = CGFloat.pi / 6
+        let a = c * cos(angle)
+        let b = c * sin(angle)
+        
+        return (a: a, dY: b)
+    }
+    
+    // MARK: Public methods
+    
+    open func setState(_ state: State, animated: Bool) {
+        guard state != self.state else { return }
+        let startPath = currentPath
+        let endPath = path(for: state)
+        
+        if animated {
+            let anim = CABasicAnimation(keyPath: "path")
+            anim.fromValue = startPath.cgPath
+            anim.toValue = endPath.cgPath
+            anim.timingFunction = CAMediaTimingFunction(name: .easeOut)
+            anim.duration = 0.25
+            anim.fillMode = .forwards
+            anim.isRemovedOnCompletion = false
+            
+            shapeLayer.add(anim, forKey: nil)
+            self.state = state
+        } else {
+            self.state = state
+            shapeLayer.path = endPath.cgPath
+        }
+
     }
 
 }

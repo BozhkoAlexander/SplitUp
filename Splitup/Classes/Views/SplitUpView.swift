@@ -22,14 +22,18 @@ class SplitUpView: UIView {
     
     weak var frontContainer: SplitUpContainer! = nil
     
-    private func setupContainer(_ container: inout SplitUpContainer?, for vc: SplitUpContainerViewController) {
+    private func setupContainer(_ container: inout SplitUpContainer?, for vc: SplitUpContainerViewController, animateRollIndicator: Bool) {
         let view = SplitUpContainer(with: vc.view, config: vc.containerConfig)
         view.scrollView = vc.scrollViewForSplit
         switch view.config.position {
         case .rear:
-            view.insets = UIEdgeInsets(top: 0, left: 0, bottom: config.bottomOffset, right: 0)
+            var bottom = config.bottomOffset
+            if !animateRollIndicator {
+                bottom += RollIndicatorView.size.height
+            }
+            view.insets = UIEdgeInsets(top: 0, left: 0, bottom: bottom, right: 0)
         case .front:
-            let top: CGFloat = view.config.rollType == .line ? 20 : 0
+            let top: CGFloat = view.config.animateRollIndicator ? 0 : RollIndicatorView.size.height
             view.insets = UIEdgeInsets(top: top, left: 0, bottom: 0, right: 0)
         }
         
@@ -55,8 +59,9 @@ class SplitUpView: UIView {
         
         backgroundColor = .black
         
-        setupContainer(&rearContainer, for: vc.rearViewController)
-        setupContainer(&frontContainer, for: vc.frontViewController)
+        let animate = vc.frontViewController.containerConfig.animateRollIndicator
+        setupContainer(&rearContainer, for: vc.rearViewController, animateRollIndicator: animate)
+        setupContainer(&frontContainer, for: vc.frontViewController, animateRollIndicator: animate)
         
         setupPan(for: vc)
     }
@@ -76,7 +81,7 @@ class SplitUpView: UIView {
         var y: CGFloat = 0
         switch state {
         case .down:
-            y = bounds.height - config.bottomOffset
+            y = bounds.height - config.bottomOffset - RollIndicatorView.size.height
             if #available(iOS 11.0, *) {
                 y -= safeAreaInsets.bottom
             }
@@ -91,11 +96,6 @@ class SplitUpView: UIView {
         if #available(iOS 11.0, *) {
             h -= safeAreaInsets.top
         }
-        if frontContainer.config.rollType == .arrow {
-            let dY = RollIndicatorView.heightForType(.arrow)
-            y -= dY
-            h += dY
-        }
         frontContainer.frame.origin.y = y
         frontContainer.frame.size.width = bounds.size.width
         frontContainer.frame.size.height = h
@@ -103,10 +103,15 @@ class SplitUpView: UIView {
     
     // MARK: Animations & transition
     
+    private func setRollStateAnimated(_ state: RollIndicatorView.State) {
+        guard frontContainer.config.animateRollIndicator else { return }
+        frontContainer.rollIndicator?.setState(state, animated: true)
+    }
+    
     @discardableResult
     func updateTransitionProgress(pan: UIPanGestureRecognizer) -> CGFloat {
         var minY = config.topOffset
-        var maxY = bounds.height - config.bottomOffset
+        var maxY = bounds.height - config.bottomOffset - RollIndicatorView.size.height
         if #available(iOS 11.0, *) {
             minY += safeAreaInsets.top
             maxY -= safeAreaInsets.bottom
@@ -116,15 +121,15 @@ class SplitUpView: UIView {
         switch state {
         case .rollUp:
             frontContainer.frame.origin.y = min(max(minY, maxY + dY), maxY)
-            let progress = max(0, min(1, abs(dY / (maxY - minY))))
-            frontContainer.rollIndicator?.progress = progress
+            let progress = max(0, min(1, -dY / (maxY - minY)))
             rearContainer.shadeView?.alpha = progress * 0.8
+            setRollStateAnimated(progress > 0 ? .line : .arrow)
             return progress
         case .rollDown:
             frontContainer.frame.origin.y = min(max(minY, minY + dY), maxY)
-            let progress = max(0, min(1, abs(dY / (maxY - minY))))
-            frontContainer.rollIndicator?.progress = progress
+            let progress = max(0, min(1, dY / (maxY - minY)))
             rearContainer.shadeView?.alpha = 0.8 - progress * 0.8
+            setRollStateAnimated(progress > 0 ? .arrow : .line)
             return progress
         default:
             return 0
@@ -134,7 +139,7 @@ class SplitUpView: UIView {
     func finishTransition(_ complete: Bool, pan: UIPanGestureRecognizer) {
         var y: CGFloat = 0
         var alpha: CGFloat = 0
-        var rollProgress: CGFloat = 0
+        var rollState: RollIndicatorView.State = .line
         
         switch state {
         case .rollUp where complete,
@@ -144,19 +149,21 @@ class SplitUpView: UIView {
                 y += safeAreaInsets.top
             }
             alpha = 0.8
-            rollProgress = 1
+            if frontContainer.config.animateRollIndicator {
+                rollState = .line
+            }
             state = .up
         case .rollUp where !complete,
              .rollDown where complete:
-            y = bounds.height - config.bottomOffset
+            y = bounds.height - config.bottomOffset - RollIndicatorView.size.height
             if #available(iOS 11.0, *) {
                 y -= safeAreaInsets.bottom
             }
+            if frontContainer.config.animateRollIndicator {
+                rollState = .arrow
+            }
             state = .down
         default: break
-        }
-        if frontContainer.config.rollType == .arrow {
-            y -= RollIndicatorView.heightForType(.arrow)
         }
         let velocity = abs(pan.velocity(in: self).y)
         let options: UIView.AnimationOptions = velocity < 1 ? .curveEaseInOut : .curveEaseOut
@@ -166,9 +173,10 @@ class SplitUpView: UIView {
             view?.frame.origin.y = y
             shadeView?.alpha = alpha
         }, completion: nil)
-        frontContainer.rollIndicator?.setProgressAnimated(rollProgress)
         rearContainer.scrollView?.isScrollEnabled = true
         frontContainer.scrollView?.isScrollEnabled = true
+        
+        frontContainer.rollIndicator?.setState(rollState, animated: true)
     }
     
     func shouldStartTransition(pan: UIPanGestureRecognizer) -> Bool {

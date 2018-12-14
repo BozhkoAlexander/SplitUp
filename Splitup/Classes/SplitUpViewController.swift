@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate {
+open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate {
     
     public enum State {
         
@@ -28,7 +28,7 @@ public class SplitUpViewController: UIViewController, UIGestureRecognizerDelegat
         
         var bottomOffset: CGFloat
         
-        init(topOffset: CGFloat, bottomOffset: CGFloat) {
+        public init(topOffset: CGFloat, bottomOffset: CGFloat) {
             self.topOffset = topOffset
             self.bottomOffset = bottomOffset
         }
@@ -50,7 +50,7 @@ public class SplitUpViewController: UIViewController, UIGestureRecognizerDelegat
     
     // MARK: Properties
     
-    public override var preferredStatusBarStyle: UIStatusBarStyle {
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
         return rearViewController.preferredStatusBarStyle
     }
     
@@ -65,11 +65,11 @@ public class SplitUpViewController: UIViewController, UIGestureRecognizerDelegat
         super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         return nil
     }
     
-    public override func loadView() {
+    open override func loadView() {
         view = SplitUpView(for: self)
     }
     

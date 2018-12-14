@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F38D11FD992026FEFB0A56BFDDE0A34 /* SplitUpContainerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129F6A2A1AA707F057533CAC0062FFE1 /* SplitUpContainerConfig.swift */; };
 		2056E2902B189B86D6A871EADBB0C2DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		2B26E69C2E9F2A850D35FCC7EB8900B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		3B3982FAE61A3C1E99166FE7EC845BD3 /* SplitUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F664D06D17DAB2C9537F8AC277EBBA4E /* SplitUpViewController.swift */; };
 		3C6F31B9437FB5C67B1ACED70C22D956 /* Pods-Splitup_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAFBFD1823BB241E6B177E2210E0164 /* Pods-Splitup_Tests-dummy.m */; };
-		4BDB43B6A7693CC21C823861EBE48787 /* Splitup-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC674EF8D977C236C225FD0F7CAA940 /* Splitup-dummy.m */; };
+		3ED2AB6FC64729E66AC3FBEE67039470 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0B4824B0D46642C5B8F00B955CBB /* UIView.swift */; };
 		7D918D173162138A739EA06D60A12F62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		8ABFB428A4D8CC665C1D5186391993ED /* Splitup-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 13D160DAC8F47C0199662E4B167A1816 /* Splitup-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82E051EE49F529509BFC1A7AF268C056 /* SplitUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480CD2278AA6682B7C79758F2D0D4635 /* SplitUpView.swift */; };
+		88A4BFD62BC1E09B398198A253CACD4E /* Splitup-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C02D063CFD2E040FAB88F037C9E01CB1 /* Splitup-dummy.m */; };
+		8ABFB428A4D8CC665C1D5186391993ED /* Splitup-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 11CF31CD37FF9D4D4FC038A8A94B9045 /* Splitup-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9B4561A5B69B9BFC2027349EB61E8BF1 /* Pods-Splitup_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B48D61CB8887D3CC2C541E7C1B3F0C /* Pods-Splitup_Example-dummy.m */; };
+		ACAC1863B1554D4D6B69D51A6AA2ECFB /* SplitUpContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BD390BAD5DDC101ABDCA9BCF256668 /* SplitUpContainer.swift */; };
 		C4492D5EAD2825602188917F761877B9 /* Pods-Splitup_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 016EFF5F02FFA2F5A551D4181BB9D487 /* Pods-Splitup_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DADB6E12BC71EFB6B5C9553D62070480 /* Pods-Splitup_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 38C75E30CA51F67873CC8D5C35497528 /* Pods-Splitup_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FA0DAA3A21C12730002DDE6E /* SplitUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DAA3221C12730002DDE6E /* SplitUpViewController.swift */; };
-		FA0DAA3B21C12730002DDE6E /* SplitUpContainerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DAA3321C12730002DDE6E /* SplitUpContainerConfig.swift */; };
-		FA0DAA3C21C12730002DDE6E /* SplitUpContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DAA3521C12730002DDE6E /* SplitUpContainer.swift */; };
-		FA0DAA3D21C12730002DDE6E /* RollIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DAA3621C12730002DDE6E /* RollIndicatorView.swift */; };
-		FA0DAA3E21C12730002DDE6E /* SplitUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DAA3721C12730002DDE6E /* SplitUpView.swift */; };
-		FA0DAA3F21C12730002DDE6E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DAA3921C12730002DDE6E /* UIView.swift */; };
+		F54841C006B4C93D726F2FC31BA8F855 /* RollIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818D46E46761C074D0384D52EC7505D /* RollIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,45 +43,45 @@
 
 /* Begin PBXFileReference section */
 		016EFF5F02FFA2F5A551D4181BB9D487 /* Pods-Splitup_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Splitup_Example-umbrella.h"; sourceTree = "<group>"; };
-		0364FC3763392B11746BCC068BB1BF73 /* Splitup.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Splitup.xcconfig; sourceTree = "<group>"; };
+		043D0B4824B0D46642C5B8F00B955CBB /* UIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		0C68889D59D91278EE51672C4CC06B4F /* Pods_Splitup_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splitup_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F58E9212D02D7517089F5806905731B /* Splitup-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Splitup-prefix.pch"; sourceTree = "<group>"; };
-		13D160DAC8F47C0199662E4B167A1816 /* Splitup-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Splitup-umbrella.h"; sourceTree = "<group>"; };
-		13FCC5697A5E294803FC34CF99859F7A /* Splitup.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Splitup.modulemap; sourceTree = "<group>"; };
+		0EDFD6F0339002E3BA6F91A814F49EF8 /* Splitup.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Splitup.xcconfig; sourceTree = "<group>"; };
+		11CF31CD37FF9D4D4FC038A8A94B9045 /* Splitup-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Splitup-umbrella.h"; sourceTree = "<group>"; };
+		129F6A2A1AA707F057533CAC0062FFE1 /* SplitUpContainerConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SplitUpContainerConfig.swift; path = Splitup/Classes/SplitUpContainerConfig.swift; sourceTree = "<group>"; };
+		15BD390BAD5DDC101ABDCA9BCF256668 /* SplitUpContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SplitUpContainer.swift; sourceTree = "<group>"; };
+		2818D46E46761C074D0384D52EC7505D /* RollIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RollIndicatorView.swift; sourceTree = "<group>"; };
 		2CFED9BF7ABB0BE3462336E2E7B01152 /* Pods_Splitup_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splitup_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3072C6DFF9E9B36CCE72E63C0D99853F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38C75E30CA51F67873CC8D5C35497528 /* Pods-Splitup_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Splitup_Tests-umbrella.h"; sourceTree = "<group>"; };
 		3D63794582377D2241389204657399FE /* Pods-Splitup_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Splitup_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3FDDD93CF2925EAFAC9A2A069876128F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42EEE6A79489B0850C4CBC9ACB753AF5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		480CD2278AA6682B7C79758F2D0D4635 /* SplitUpView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SplitUpView.swift; sourceTree = "<group>"; };
 		4DEAC90E1EE03FDD49CDD1A974F61C3E /* Pods-Splitup_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Splitup_Example-frameworks.sh"; sourceTree = "<group>"; };
 		5AFACE4D0CA4ADBA9DD1220E19AF9102 /* Pods-Splitup_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Splitup_Example.modulemap"; sourceTree = "<group>"; };
-		5D4F6F6F8E40E72539360C9F9538C21D /* Splitup.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Splitup.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		5FC674EF8D977C236C225FD0F7CAA940 /* Splitup-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Splitup-dummy.m"; sourceTree = "<group>"; };
-		615B48C4C104B438FB1FD5BA4B7072AE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		64A76C57A83BC622F9B3844D6C0D502F /* Pods-Splitup_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Splitup_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		65B48D61CB8887D3CC2C541E7C1B3F0C /* Pods-Splitup_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Splitup_Example-dummy.m"; sourceTree = "<group>"; };
 		665E9ECC8758FFFEC0B3BA61DE7BFBAE /* Pods-Splitup_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Splitup_Tests.modulemap"; sourceTree = "<group>"; };
+		6705274290C75654CAAC359461D9EC0C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		757B9EFC7E3E1A5CEC94ADD1159472F0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B0BC4FCE48046D1831E7960EC3F19CA /* Pods-Splitup_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Splitup_Tests-resources.sh"; sourceTree = "<group>"; };
 		7BAFBFD1823BB241E6B177E2210E0164 /* Pods-Splitup_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Splitup_Tests-dummy.m"; sourceTree = "<group>"; };
-		7DB00E20FC4E1F7071D6D54E788C9A4A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		858383E8AB191EEB125B0834140F88BF /* Splitup.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Splitup.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		899F6476DAE5E9B3CD90795089C2C0FE /* Pods-Splitup_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Splitup_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		937FD8A4CD7B4D7E133576888FB9C706 /* Pods-Splitup_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Splitup_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94BCC0F6563993A2729CB402677E17E8 /* Splitup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Splitup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B9C32C8B13B85F03E272325918C298 /* Pods-Splitup_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Splitup_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		96F328ECC666E025BE86D24451EB1184 /* Splitup-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Splitup-prefix.pch"; sourceTree = "<group>"; };
 		AEF8478E3FA5D518B7E5F84CA7656DE7 /* Pods-Splitup_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Splitup_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		B1811982E689D905323C20A286684F46 /* Pods-Splitup_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Splitup_Example-resources.sh"; sourceTree = "<group>"; };
 		B5A1814141BCB6A3D4AD161D533D2F6B /* Pods-Splitup_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Splitup_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		BFA2223771B77F91D94AB4807F68285C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C02D063CFD2E040FAB88F037C9E01CB1 /* Splitup-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Splitup-dummy.m"; sourceTree = "<group>"; };
 		C57339DB648285FA8D1553CCD5976715 /* Pods-Splitup_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Splitup_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D8BEF96C4ACF5E40B5CFE55738075E03 /* Pods-Splitup_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Splitup_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		FA0DAA3221C12730002DDE6E /* SplitUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitUpViewController.swift; sourceTree = "<group>"; };
-		FA0DAA3321C12730002DDE6E /* SplitUpContainerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitUpContainerConfig.swift; sourceTree = "<group>"; };
-		FA0DAA3521C12730002DDE6E /* SplitUpContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitUpContainer.swift; sourceTree = "<group>"; };
-		FA0DAA3621C12730002DDE6E /* RollIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollIndicatorView.swift; sourceTree = "<group>"; };
-		FA0DAA3721C12730002DDE6E /* SplitUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitUpView.swift; sourceTree = "<group>"; };
-		FA0DAA3921C12730002DDE6E /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		E6919C5479F1050E5E3B393496FEFCF4 /* Splitup.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Splitup.modulemap; sourceTree = "<group>"; };
+		F664D06D17DAB2C9537F8AC277EBBA4E /* SplitUpViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SplitUpViewController.swift; path = Splitup/Classes/SplitUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +112,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BD955BCE9AA73D0E2B6CAE362DD3B3B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3072C6DFF9E9B36CCE72E63C0D99853F /* Info.plist */,
+				E6919C5479F1050E5E3B393496FEFCF4 /* Splitup.modulemap */,
+				0EDFD6F0339002E3BA6F91A814F49EF8 /* Splitup.xcconfig */,
+				C02D063CFD2E040FAB88F037C9E01CB1 /* Splitup-dummy.m */,
+				96F328ECC666E025BE86D24451EB1184 /* Splitup-prefix.pch */,
+				11CF31CD37FF9D4D4FC038A8A94B9045 /* Splitup-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Splitup";
+			sourceTree = "<group>";
+		};
+		36CFDF22F78A3717463F06F16A14B1A5 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				42EEE6A79489B0850C4CBC9ACB753AF5 /* LICENSE */,
+				6705274290C75654CAAC359461D9EC0C /* README.md */,
+				858383E8AB191EEB125B0834140F88BF /* Splitup.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		36FBCF2CF8B70881DB13F12CC8D0AF27 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				043D0B4824B0D46642C5B8F00B955CBB /* UIView.swift */,
+			);
+			name = Extensions;
+			path = Splitup/Classes/Extensions;
+			sourceTree = "<group>";
+		};
 		37564B8B21072CC3E2C16FDA8BCE6C1F /* Pods-Splitup_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,12 +163,15 @@
 			path = "Target Support Files/Pods-Splitup_Tests";
 			sourceTree = "<group>";
 		};
-		3BD19944106ABB1484A6AB3CE941CC98 /* Development Pods */ = {
+		3EC931B30DF69C63AFBB324F699B10E5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BBF2EF5513E4454DE8ECFE78A4B76D6B /* Splitup */,
+				2818D46E46761C074D0384D52EC7505D /* RollIndicatorView.swift */,
+				15BD390BAD5DDC101ABDCA9BCF256668 /* SplitUpContainer.swift */,
+				480CD2278AA6682B7C79758F2D0D4635 /* SplitUpView.swift */,
 			);
-			name = "Development Pods";
+			name = Views;
+			path = Splitup/Classes/Views;
 			sourceTree = "<group>";
 		};
 		44D5347904CF754D6785B84253F2574A /* iOS */ = {
@@ -164,25 +200,11 @@
 			path = "Target Support Files/Pods-Splitup_Example";
 			sourceTree = "<group>";
 		};
-		612224CB02B3E448B5E9A08D852A3C4B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				BFA2223771B77F91D94AB4807F68285C /* Info.plist */,
-				13FCC5697A5E294803FC34CF99859F7A /* Splitup.modulemap */,
-				0364FC3763392B11746BCC068BB1BF73 /* Splitup.xcconfig */,
-				5FC674EF8D977C236C225FD0F7CAA940 /* Splitup-dummy.m */,
-				0F58E9212D02D7517089F5806905731B /* Splitup-prefix.pch */,
-				13D160DAC8F47C0199662E4B167A1816 /* Splitup-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Splitup";
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				3BD19944106ABB1484A6AB3CE941CC98 /* Development Pods */,
+				AB4140B5DAA6D60652BF6E09A874D69D /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				900A460E7AF603248DA49F44DE6B159F /* Products */,
 				8DD7E494DAC99EB2C639AF23CB7CDF1F /* Targets Support Files */,
@@ -208,26 +230,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B9862DB6C2C7759C67017FFD6AFE8E6E /* Pod */ = {
+		AB4140B5DAA6D60652BF6E09A874D69D /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				615B48C4C104B438FB1FD5BA4B7072AE /* LICENSE */,
-				7DB00E20FC4E1F7071D6D54E788C9A4A /* README.md */,
-				5D4F6F6F8E40E72539360C9F9538C21D /* Splitup.podspec */,
+				F13B9ED3B6D91145AC7E2C43E6977956 /* Splitup */,
 			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		BBF2EF5513E4454DE8ECFE78A4B76D6B /* Splitup */ = {
-			isa = PBXGroup;
-			children = (
-				FA0DAA2E21C1225B002DDE6E /* Assets */,
-				FA0DAA2C21C1225B002DDE6E /* Classes */,
-				B9862DB6C2C7759C67017FFD6AFE8E6E /* Pod */,
-				612224CB02B3E448B5E9A08D852A3C4B /* Support Files */,
-			);
-			name = Splitup;
-			path = ../..;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -238,42 +246,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FA0DAA2C21C1225B002DDE6E /* Classes */ = {
+		F13B9ED3B6D91145AC7E2C43E6977956 /* Splitup */ = {
 			isa = PBXGroup;
 			children = (
-				FA0DAA3821C12730002DDE6E /* Extensions */,
-				FA0DAA3421C12730002DDE6E /* Views */,
-				FA0DAA3321C12730002DDE6E /* SplitUpContainerConfig.swift */,
-				FA0DAA3221C12730002DDE6E /* SplitUpViewController.swift */,
+				3EC931B30DF69C63AFBB324F699B10E5 /* Views */,
+				129F6A2A1AA707F057533CAC0062FFE1 /* SplitUpContainerConfig.swift */,
+				F664D06D17DAB2C9537F8AC277EBBA4E /* SplitUpViewController.swift */,
+				36FBCF2CF8B70881DB13F12CC8D0AF27 /* Extensions */,
+				36CFDF22F78A3717463F06F16A14B1A5 /* Pod */,
+				1BD955BCE9AA73D0E2B6CAE362DD3B3B /* Support Files */,
 			);
-			name = Classes;
-			path = Splitup/Classes;
-			sourceTree = "<group>";
-		};
-		FA0DAA2E21C1225B002DDE6E /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Assets;
-			path = Splitup/Assets;
-			sourceTree = "<group>";
-		};
-		FA0DAA3421C12730002DDE6E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				FA0DAA3521C12730002DDE6E /* SplitUpContainer.swift */,
-				FA0DAA3621C12730002DDE6E /* RollIndicatorView.swift */,
-				FA0DAA3721C12730002DDE6E /* SplitUpView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		FA0DAA3821C12730002DDE6E /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				FA0DAA3921C12730002DDE6E /* UIView.swift */,
-			);
-			path = Extensions;
+			name = Splitup;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,7 +314,7 @@
 			buildConfigurationList = 0AF8F724ADA9F480C874E816D4210F47 /* Build configuration list for PBXNativeTarget "Splitup" */;
 			buildPhases = (
 				687B4D0A88B574DCC1AC91B038D858D4 /* Headers */,
-				C1968A0EF95CAF1FF265AEEF546D65BE /* Sources */,
+				B01D2B9963AF93ACDE266DF57AB38F68 /* Sources */,
 				E61CD935638C64645795F2D468941091 /* Frameworks */,
 				6ED3EAFD4A5EC99D116B21E4850C1953 /* Resources */,
 			);
@@ -370,11 +354,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
-				TargetAttributes = {
-					4893EBD0E702764F106BDE5D5F85ECDB = {
-						LastSwiftMigration = 1010;
-					};
-				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -420,17 +399,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C1968A0EF95CAF1FF265AEEF546D65BE /* Sources */ = {
+		B01D2B9963AF93ACDE266DF57AB38F68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA0DAA3E21C12730002DDE6E /* SplitUpView.swift in Sources */,
-				FA0DAA3A21C12730002DDE6E /* SplitUpViewController.swift in Sources */,
-				FA0DAA3C21C12730002DDE6E /* SplitUpContainer.swift in Sources */,
-				FA0DAA3F21C12730002DDE6E /* UIView.swift in Sources */,
-				FA0DAA3D21C12730002DDE6E /* RollIndicatorView.swift in Sources */,
-				4BDB43B6A7693CC21C823861EBE48787 /* Splitup-dummy.m in Sources */,
-				FA0DAA3B21C12730002DDE6E /* SplitUpContainerConfig.swift in Sources */,
+				F54841C006B4C93D726F2FC31BA8F855 /* RollIndicatorView.swift in Sources */,
+				88A4BFD62BC1E09B398198A253CACD4E /* Splitup-dummy.m in Sources */,
+				ACAC1863B1554D4D6B69D51A6AA2ECFB /* SplitUpContainer.swift in Sources */,
+				1F38D11FD992026FEFB0A56BFDDE0A34 /* SplitUpContainerConfig.swift in Sources */,
+				82E051EE49F529509BFC1A7AF268C056 /* SplitUpView.swift in Sources */,
+				3B3982FAE61A3C1E99166FE7EC845BD3 /* SplitUpViewController.swift in Sources */,
+				3ED2AB6FC64729E66AC3FBEE67039470 /* UIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +447,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		231385C0A9CC09B8DD5D30D3BE8C0092 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EDFD6F0339002E3BA6F91A814F49EF8 /* Splitup.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Splitup/Splitup-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Splitup/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Splitup/Splitup.modulemap";
+				PRODUCT_MODULE_NAME = Splitup;
+				PRODUCT_NAME = Splitup;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		320B050564DCB60A2AE35766261F010A /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 899F6476DAE5E9B3CD90795089C2C0FE /* Pods-Splitup_Tests.release.xcconfig */;
@@ -663,11 +674,10 @@
 			};
 			name = Release;
 		};
-		774894CE1C731BD2429BF40192E8779B /* Debug */ = {
+		9D24638A9F2048F804B70CDAAD196108 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0364FC3763392B11746BCC068BB1BF73 /* Splitup.xcconfig */;
+			baseConfigurationReference = 0EDFD6F0339002E3BA6F91A814F49EF8 /* Splitup.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -680,7 +690,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Splitup/Splitup-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Splitup/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Splitup/Splitup.modulemap";
 				PRODUCT_MODULE_NAME = Splitup;
@@ -688,46 +698,12 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		EAC4D70AC874C05168F692831E453F3A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0364FC3763392B11746BCC068BB1BF73 /* Splitup.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Splitup/Splitup-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Splitup/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Splitup/Splitup.modulemap";
-				PRODUCT_MODULE_NAME = Splitup;
-				PRODUCT_NAME = Splitup;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		F6D14E82AEF5FD3BF0D18CF612824CE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -801,8 +777,8 @@
 		0AF8F724ADA9F480C874E816D4210F47 /* Build configuration list for PBXNativeTarget "Splitup" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				774894CE1C731BD2429BF40192E8779B /* Debug */,
-				EAC4D70AC874C05168F692831E453F3A /* Release */,
+				9D24638A9F2048F804B70CDAAD196108 /* Debug */,
+				231385C0A9CC09B8DD5D30D3BE8C0092 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

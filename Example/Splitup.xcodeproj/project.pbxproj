@@ -10,11 +10,25 @@
 		307DB7C70C4DDE2BB8A48C64 /* Pods_Splitup_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E8FB53782B8A9C9737D67F /* Pods_Splitup_Tests.framework */; };
 		5FA9AA65DE7D026E283F67CD /* Pods_Splitup_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE98A2B239D9D8CF21520F1 /* Pods_Splitup_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		FACFB91D21C13D750060D92B /* poster0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FACFB90C21C13D750060D92B /* poster0.jpg */; };
+		FACFB91E21C13D750060D92B /* poster1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FACFB90D21C13D750060D92B /* poster1.jpg */; };
+		FACFB91F21C13D750060D92B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFB90F21C13D750060D92B /* String.swift */; };
+		FACFB92021C13D750060D92B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFB91121C13D750060D92B /* ListViewController.swift */; };
+		FACFB92121C13D750060D92B /* PosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFB91221C13D750060D92B /* PosterViewController.swift */; };
+		FACFB92221C13D750060D92B /* SplitUpTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFB91321C13D750060D92B /* SplitUpTransitionController.swift */; };
+		FACFB92321C13D750060D92B /* SplitBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFB91421C13D750060D92B /* SplitBackViewController.swift */; };
+		FACFB92421C13D750060D92B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFB91521C13D750060D92B /* DetailsViewController.swift */; };
+		FACFB92521C13D750060D92B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFB91721C13D750060D92B /* ListView.swift */; };
+		FACFB92621C13D750060D92B /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFB91821C13D750060D92B /* DetailsView.swift */; };
+		FACFB92721C13D750060D92B /* SplitUpContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFB91921C13D750060D92B /* SplitUpContainerView.swift */; };
+		FACFB92821C13D750060D92B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFB91A21C13D750060D92B /* CollectionViewCell.swift */; };
+		FACFB92921C13D750060D92B /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFB91B21C13D750060D92B /* PosterView.swift */; };
+		FACFB92A21C13D750060D92B /* SplitBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFB91C21C13D750060D92B /* SplitBackView.swift */; };
+		FACFB92C21C150110060D92B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFB92B21C150110060D92B /* TestViewController.swift */; };
+		FACFB92E21C150240060D92B /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFB92D21C150240060D92B /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +51,6 @@
 		607FACD01AFB9204008FA782 /* Splitup_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Splitup_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Splitup_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Splitup_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +59,22 @@
 		6BE98A2B239D9D8CF21520F1 /* Pods_Splitup_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splitup_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78237C3C5C01E35705F29B12 /* Pods-Splitup_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splitup_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Splitup_Tests/Pods-Splitup_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E6E8FB53782B8A9C9737D67F /* Pods_Splitup_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splitup_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FACFB90C21C13D750060D92B /* poster0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = poster0.jpg; sourceTree = "<group>"; };
+		FACFB90D21C13D750060D92B /* poster1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = poster1.jpg; sourceTree = "<group>"; };
+		FACFB90F21C13D750060D92B /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FACFB91121C13D750060D92B /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		FACFB91221C13D750060D92B /* PosterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterViewController.swift; sourceTree = "<group>"; };
+		FACFB91321C13D750060D92B /* SplitUpTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitUpTransitionController.swift; sourceTree = "<group>"; };
+		FACFB91421C13D750060D92B /* SplitBackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitBackViewController.swift; sourceTree = "<group>"; };
+		FACFB91521C13D750060D92B /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		FACFB91721C13D750060D92B /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		FACFB91821C13D750060D92B /* DetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		FACFB91921C13D750060D92B /* SplitUpContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitUpContainerView.swift; sourceTree = "<group>"; };
+		FACFB91A21C13D750060D92B /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		FACFB91B21C13D750060D92B /* PosterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
+		FACFB91C21C13D750060D92B /* SplitBackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitBackView.swift; sourceTree = "<group>"; };
+		FACFB92B21C150110060D92B /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		FACFB92D21C150240060D92B /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +132,11 @@
 		607FACD21AFB9204008FA782 /* Example for Splitup */ = {
 			isa = PBXGroup;
 			children = (
+				FACFB91021C13D750060D92B /* Controllers */,
+				FACFB90B21C13D750060D92B /* Data */,
+				FACFB90E21C13D750060D92B /* Extensions */,
+				FACFB91621C13D750060D92B /* Views */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -159,6 +189,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FACFB90B21C13D750060D92B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FACFB90C21C13D750060D92B /* poster0.jpg */,
+				FACFB90D21C13D750060D92B /* poster1.jpg */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FACFB90E21C13D750060D92B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FACFB90F21C13D750060D92B /* String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FACFB91021C13D750060D92B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FACFB91121C13D750060D92B /* ListViewController.swift */,
+				FACFB91221C13D750060D92B /* PosterViewController.swift */,
+				FACFB91321C13D750060D92B /* SplitUpTransitionController.swift */,
+				FACFB91421C13D750060D92B /* SplitBackViewController.swift */,
+				FACFB91521C13D750060D92B /* DetailsViewController.swift */,
+				FACFB92B21C150110060D92B /* TestViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FACFB91621C13D750060D92B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FACFB91721C13D750060D92B /* ListView.swift */,
+				FACFB91821C13D750060D92B /* DetailsView.swift */,
+				FACFB91921C13D750060D92B /* SplitUpContainerView.swift */,
+				FACFB91A21C13D750060D92B /* CollectionViewCell.swift */,
+				FACFB91B21C13D750060D92B /* PosterView.swift */,
+				FACFB91C21C13D750060D92B /* SplitBackView.swift */,
+				FACFB92D21C150240060D92B /* TestView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -207,15 +281,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 9DFU33V8T6;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 9DFU33V8T6;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -245,9 +321,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				FACFB91E21C13D750060D92B /* poster1.jpg in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				FACFB91D21C13D750060D92B /* poster0.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,8 +411,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				FACFB92C21C150110060D92B /* TestViewController.swift in Sources */,
+				FACFB92721C13D750060D92B /* SplitUpContainerView.swift in Sources */,
+				FACFB92521C13D750060D92B /* ListView.swift in Sources */,
+				FACFB91F21C13D750060D92B /* String.swift in Sources */,
+				FACFB92621C13D750060D92B /* DetailsView.swift in Sources */,
+				FACFB92121C13D750060D92B /* PosterViewController.swift in Sources */,
+				FACFB92E21C150240060D92B /* TestView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				FACFB92221C13D750060D92B /* SplitUpTransitionController.swift in Sources */,
+				FACFB92421C13D750060D92B /* DetailsViewController.swift in Sources */,
+				FACFB92321C13D750060D92B /* SplitBackViewController.swift in Sources */,
+				FACFB92A21C13D750060D92B /* SplitBackView.swift in Sources */,
+				FACFB92021C13D750060D92B /* ListViewController.swift in Sources */,
+				FACFB92821C13D750060D92B /* CollectionViewCell.swift in Sources */,
+				FACFB92921C13D750060D92B /* PosterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,14 +448,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -389,12 +471,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -442,12 +526,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -481,13 +567,14 @@
 			baseConfigurationReference = 389BB341F0D56800B16EB4A8 /* Pods-Splitup_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9DFU33V8T6;
 				INFOPLIST_FILE = Splitup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -496,13 +583,14 @@
 			baseConfigurationReference = 1DCAABC59CF8BE0BCB670621 /* Pods-Splitup_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9DFU33V8T6;
 				INFOPLIST_FILE = Splitup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -510,10 +598,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2690403245B2355EF1D25C7C /* Pods-Splitup_Tests.debug.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				DEVELOPMENT_TEAM = 9DFU33V8T6;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -523,7 +609,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Splitup_Example.app/Splitup_Example";
 			};
 			name = Debug;
@@ -532,16 +618,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 78237C3C5C01E35705F29B12 /* Pods-Splitup_Tests.release.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				DEVELOPMENT_TEAM = 9DFU33V8T6;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Splitup_Example.app/Splitup_Example";
 			};
 			name = Release;
