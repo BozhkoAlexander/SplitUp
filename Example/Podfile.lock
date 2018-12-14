@@ -1,5 +1,5 @@
 PODS:
-  - Splitup (0.1.1)
+  - Splitup (0.1.2)
 
 DEPENDENCIES:
   - Splitup (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Splitup: 8174b3bdbcc530a5e6377f5c30501c60a95c4be9
+  Splitup: b91e7f8676f7c7f10c28a5b6826bf579dfcde0ba
 
 PODFILE CHECKSUM: 9fc975e454c2ac5359faa310463481d11d3342f9
 
