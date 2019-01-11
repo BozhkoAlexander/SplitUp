@@ -63,6 +63,8 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
         self.rearViewController = rvc
         self.frontViewController = fvc
         super.init(nibName: nil, bundle: nil)
+        addChild(rvc)
+        addChild(fvc)
     }
     
     public required init?(coder aDecoder: NSCoder) {
