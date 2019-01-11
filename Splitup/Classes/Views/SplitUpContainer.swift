@@ -20,11 +20,11 @@ public class SplitUpContainer: UIView {
     
     public struct Config {
         
-        let position: Position
+        public let position: Position
         
-        var animateRollIndicator: Bool
+        public var animateRollIndicator: Bool
                 
-        var closeButtonImage: UIImage?
+        public var closeButtonImage: UIImage?
         
         public init(position: Position, animateRollIndicator: Bool = false, closeButtonImage: UIImage?) {
             self.position = position
