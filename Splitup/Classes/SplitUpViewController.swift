@@ -75,6 +75,20 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
         view = SplitUpView(for: self)
     }
     
+    // MARK: Interactive dismissal
+    
+    open func prepareInteractiveDismiss(with pan: UIPanGestureRecognizer) {
+        print("INFO: Override prepareInteractiveDismiss(with:_) without super call")
+    }
+    
+    open func updateInteractiveDismiss(with pan: UIPanGestureRecognizer) {
+        print("INFO: Override updateInteractiveDismiss(with:_) without super call")
+    }
+    
+    open func finishInteractiveDismiss(with pan: UIPanGestureRecognizer) {
+        print("INFO: Override finishInteractiveDismiss(with:_) without super call")
+    }
+    
     // MARK: Gesture handlers
     
     @objc func handlePan(_ pan: UIPanGestureRecognizer) {
@@ -84,6 +98,14 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
             if velocity < 0 {
                 state = .rollUp
                 splitUpView.updateTransitionProgress(pan: pan)
+            } else {
+                prepareInteractiveDismiss(with: pan)
+            }
+        case .down:
+            updateInteractiveDismiss(with: pan)
+            if pan.state == .cancelled || pan.state == .ended {
+                splitUpView.finishDismiss(pan)
+                finishInteractiveDismiss(with: pan)
             }
         case .rollUp:
             let progress = splitUpView.updateTransitionProgress(pan: pan)

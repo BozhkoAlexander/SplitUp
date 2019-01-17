@@ -202,16 +202,21 @@ class SplitUpView: UIView {
                 guard let scrollView = rearContainer.scrollView else { return true }
                 let velocity = pan.velocity(in: self).y
                 let contentY = scrollView.contentOffset.y + scrollView.bounds.height
-                let shouldStart = contentY >= scrollView.contentSize.height && velocity < 0
-                if shouldStart {
+                let shoouldRollUp = contentY >= scrollView.contentSize.height && velocity < 0
+                let shouldDismiss = scrollView.contentOffset.y <= 0 && velocity > 0
+                if shoouldRollUp || shouldDismiss {
                     scrollView.isScrollEnabled = false
                 }
-                return shouldStart
+                return shoouldRollUp || shouldDismiss
             default:
                 return false
             }
         }
         return false
+    }
+    
+    func finishDismiss(_ pan: UIPanGestureRecognizer) {
+        rearContainer.scrollView?.isScrollEnabled = true
     }
     
 }
