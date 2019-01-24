@@ -139,7 +139,7 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
     }
     
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
+        return (gestureRecognizer.view as? SplitUpContainer)?.scrollView == otherGestureRecognizer.view
     }
 
 }
