@@ -14,7 +14,7 @@ class DetailsViewController: UIViewController, SplitUpContainerConfig, UICollect
     var containerConfig: SplitUpContainer.Config {
         return SplitUpContainer.Config(
             position: .front,
-            animateRollIndicator: true,
+            animateRollIndicator: false,
             closeButtonImage: nil
         )
     }

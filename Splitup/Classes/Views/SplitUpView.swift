@@ -16,9 +16,15 @@ class SplitUpView: UIView {
     
     private let config: SplitUpViewController.Config
     
+    // MARK: Properties
+    
+    private weak var target: NSObjectProtocol? = nil
+    
+    private var didChangeStateAction: Selector? = nil
+    
     // MARK: Subviews
 
-    weak var rearContainer: SplitUpContainer! = nil
+    weak var rearContainer: SplitUpContainer? = nil
     
     weak var frontContainer: SplitUpContainer! = nil
     
@@ -42,9 +48,11 @@ class SplitUpView: UIView {
     }
     
     private func setupPan(for vc: SplitUpViewController) {
-        let rear = UIPanGestureRecognizer(target: vc, action: #selector(vc.handlePan(_:)))
-        rear.delegate = vc
-        rearContainer.addGestureRecognizer(rear)
+        if let container = rearContainer {
+            let rear = UIPanGestureRecognizer(target: vc, action: #selector(vc.handlePan(_:)))
+            rear.delegate = vc
+            container.addGestureRecognizer(rear)
+        }
         
         let front = UIPanGestureRecognizer(target: vc, action: #selector(vc.handlePan(_:)))
         front.delegate = vc
@@ -57,13 +65,18 @@ class SplitUpView: UIView {
         self.config = vc.config
         super.init(frame: .zero)
         
-        backgroundColor = .black
+        backgroundColor = .clear
         
         let animate = vc.frontViewController.containerConfig.animateRollIndicator
-        setupContainer(&rearContainer, for: vc.rearViewController, animateRollIndicator: animate)
+        if let rvc = vc.rearViewController {
+            setupContainer(&rearContainer, for: rvc, animateRollIndicator: animate)
+        }
         setupContainer(&frontContainer, for: vc.frontViewController, animateRollIndicator: animate)
         
         setupPan(for: vc)
+        
+        target = vc
+        didChangeStateAction = #selector(vc.didChangeState)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -75,7 +88,7 @@ class SplitUpView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        rearContainer.frame = bounds
+        rearContainer?.frame = bounds
         
         frontContainer.frame.origin.x = 0
         var y: CGFloat = 0
@@ -103,6 +116,60 @@ class SplitUpView: UIView {
     
     // MARK: Animations & transition
     
+    public func setState(_ newValue: SplitUpViewController.State, animated: Bool) {
+        state = newValue
+        
+        var y: CGFloat = 0
+        var alpha: CGFloat = 0
+        var rollState: RollIndicatorView.State = .line
+        
+        switch state {
+        case .up:
+            y = config.topOffset
+            if #available(iOS 11.0, *) {
+                y += safeAreaInsets.top
+            }
+            alpha = 0.8
+            if frontContainer.config.animateRollIndicator {
+                rollState = .line
+            }
+        case .down:
+            y = bounds.height - config.bottomOffset - RollIndicatorView.size.height
+            if #available(iOS 11.0, *) {
+                y -= safeAreaInsets.bottom
+            }
+            if frontContainer.config.animateRollIndicator {
+                rollState = .arrow
+            }
+        default: break
+        }
+        let view = frontContainer
+        let shadeView = rearContainer?.shadeView
+        let backgroundView = self
+        if animated {
+            let options: UIView.AnimationOptions = .curveEaseInOut
+            UIView.animate(withDuration: 0.25, delay: 0, options: options, animations: {
+                view?.frame.origin.y = y
+                if shadeView != nil {
+                    shadeView?.alpha = alpha
+                } else {
+                    backgroundView.backgroundColor = UIColor.black.withAlphaComponent(alpha)
+                }
+            }, completion: nil)
+        } else {
+            view?.frame.origin.y = y
+            if shadeView != nil {
+                shadeView?.alpha = alpha
+            } else {
+                backgroundView.backgroundColor = UIColor.black.withAlphaComponent(alpha)
+            }
+        }
+        rearContainer?.scrollView?.isScrollEnabled = true
+        frontContainer.scrollView?.isScrollEnabled = true
+        
+        frontContainer.rollIndicator?.setState(rollState, animated: animated)
+    }
+    
     private func setRollStateAnimated(_ state: RollIndicatorView.State) {
         guard frontContainer.config.animateRollIndicator else { return }
         frontContainer.rollIndicator?.setState(state, animated: true)
@@ -122,13 +189,21 @@ class SplitUpView: UIView {
         case .rollUp:
             frontContainer.frame.origin.y = min(max(minY, maxY + dY), maxY)
             let progress = max(0, min(1, -dY / (maxY - minY)))
-            rearContainer.shadeView?.alpha = progress * 0.8
+            if let shadeView = rearContainer?.shadeView {
+                shadeView.alpha = progress * 0.8
+            } else {
+                self.backgroundColor = UIColor.black.withAlphaComponent(progress * 0.8)
+            }
             setRollStateAnimated(progress > 0 ? .line : .arrow)
             return progress
         case .rollDown:
             frontContainer.frame.origin.y = min(max(minY, minY + dY), maxY)
             let progress = max(0, min(1, dY / (maxY - minY)))
-            rearContainer.shadeView?.alpha = 0.8 - progress * 0.8
+            if let shadeView = rearContainer?.shadeView {
+                shadeView.alpha = 0.8 - progress * 0.8
+            } else {
+                self.backgroundColor = UIColor.black.withAlphaComponent(0.8 - progress * 0.8)
+            }
             setRollStateAnimated(progress > 0 ? .arrow : .line)
             return progress
         default:
@@ -168,12 +243,20 @@ class SplitUpView: UIView {
         let velocity = abs(pan.velocity(in: self).y)
         let options: UIView.AnimationOptions = velocity < 1 ? .curveEaseInOut : .curveEaseOut
         let view = frontContainer
-        let shadeView = rearContainer.shadeView
+        let shadeView = rearContainer?.shadeView
+        let backgroundView = self
         UIView.animate(withDuration: 0.25, delay: 0, options: options, animations: {
             view?.frame.origin.y = y
-            shadeView?.alpha = alpha
-        }, completion: nil)
-        rearContainer.scrollView?.isScrollEnabled = true
+            if shadeView != nil {
+                shadeView?.alpha = alpha
+            } else {
+                backgroundView.backgroundColor = UIColor.black.withAlphaComponent(alpha)
+            }        }, completion: { [weak self] _ in
+            if let target = self?.target, let action = self?.didChangeStateAction {
+                target.perform(action)
+            }
+        })
+        rearContainer?.scrollView?.isScrollEnabled = true
         frontContainer.scrollView?.isScrollEnabled = true
         
         frontContainer.rollIndicator?.setState(rollState, animated: true)
@@ -199,7 +282,7 @@ class SplitUpView: UIView {
         } else if pan.view == rearContainer {
             switch state {
             case .down:
-                guard let scrollView = rearContainer.scrollView else { return true }
+                guard let scrollView = rearContainer?.scrollView else { return true }
                 let velocity = pan.velocity(in: self).y
                 let contentY = scrollView.contentOffset.y + scrollView.bounds.height
                 let shoouldRollUp = contentY >= scrollView.contentSize.height && velocity < 0
@@ -216,7 +299,7 @@ class SplitUpView: UIView {
     }
     
     func finishDismiss(_ pan: UIPanGestureRecognizer) {
-        rearContainer.scrollView?.isScrollEnabled = true
+        rearContainer?.scrollView?.isScrollEnabled = true
     }
     
 }

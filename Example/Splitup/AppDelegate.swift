@@ -17,11 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = SplitUpViewController(
-            config: SplitUpViewController.Config(topOffset: 64, bottomOffset: 0),
-            rear: ListViewController(),
-            front: DetailsViewController()
-        )
+        window?.rootViewController = TestViewController()
         window?.makeKeyAndVisible()
         
         return true

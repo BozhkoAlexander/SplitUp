@@ -39,32 +39,43 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
     
     public var state: State {
         get { return splitUpView.state }
-        set { splitUpView.state = newValue}
+        set { splitUpView.state = newValue }
     }
     
-    public let rearViewController: SplitUpContainerViewController
+    public var rearViewController: SplitUpContainerViewController?
     
     public let frontViewController: SplitUpContainerViewController
     
     public let config: Config
     
+    private var transition: SplitUpTransition? = nil
+    
     // MARK: Properties
     
     open override var preferredStatusBarStyle: UIStatusBarStyle {
-        return rearViewController.preferredStatusBarStyle
+        return rearViewController?.preferredStatusBarStyle ?? super.preferredStatusBarStyle
     }
     
     var splitUpView: SplitUpView! { return view as? SplitUpView }
     
     // MARK: Life cycle
     
-    public init(config: Config, rear rvc: SplitUpContainerViewController, front fvc: SplitUpContainerViewController) {
+    public init(config: Config, rear rvc: SplitUpContainerViewController?, front fvc: SplitUpContainerViewController) {
         self.config = config
         self.rearViewController = rvc
         self.frontViewController = fvc
         super.init(nibName: nil, bundle: nil)
-        addChild(rvc)
+        if let rvc = rvc {
+            addChild(rvc)
+        }
         addChild(fvc)
+        
+        if rvc == nil {
+            // needs custom presentation animation
+            transition = SplitUpTransition()
+            modalPresentationStyle = .custom
+            transitioningDelegate = transition
+        }
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -73,6 +84,12 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
     
     open override func loadView() {
         view = SplitUpView(for: self)
+    }
+    
+    @objc func didChangeState() {
+        if state == .down && rearViewController == nil {
+            dismiss(animated: false, completion: nil)
+        }
     }
     
     // MARK: Interactive dismissal

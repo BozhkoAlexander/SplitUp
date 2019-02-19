@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Splitup
 
 class TestViewController: UIViewController {
     
@@ -26,6 +27,15 @@ class TestViewController: UIViewController {
         case .line: rollView.setState(.arrow, animated: true)
         case .arrow: rollView.setState(.line, animated: true)
         }
+    }
+    
+    @objc func detailsPressed(_ sender: UIButton) {
+        let vc = SplitUpViewController(
+            config: SplitUpViewController.Config(topOffset: 64, bottomOffset: 0),
+            rear: ListViewController(),
+            front: DetailsViewController()
+        )
+        present(vc, animated: true)
     }
 
 }
