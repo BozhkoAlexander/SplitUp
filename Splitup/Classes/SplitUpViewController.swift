@@ -88,7 +88,7 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
     
     @objc func didChangeState() {
         if state == .down && rearViewController == nil {
-            dismiss(animated: false, completion: nil)
+            dismiss(animated: true, completion: nil)
         }
     }
     
