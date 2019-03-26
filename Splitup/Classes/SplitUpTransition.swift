@@ -29,7 +29,7 @@ public class SplitUpTransition: NSObject, UIViewControllerTransitioningDelegate 
 
 internal extension SplitUpTransition {
     
-    internal class NonRearPresentAnimation: NSObject, UIViewControllerAnimatedTransitioning {
+    class NonRearPresentAnimation: NSObject, UIViewControllerAnimatedTransitioning {
         
         func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
             return 0.35
@@ -61,7 +61,7 @@ internal extension SplitUpTransition {
 
     }
     
-    internal class NonRearDismissAnimation: NSObject, UIViewControllerAnimatedTransitioning {
+    class NonRearDismissAnimation: NSObject, UIViewControllerAnimatedTransitioning {
         
         func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
             return 0.1

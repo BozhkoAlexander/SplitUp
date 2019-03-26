@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIView {
     
-    public var splitUp: SplitUpContainer? {
+    var splitUp: SplitUpContainer? {
         return superview?.superview as? SplitUpContainer
     }
     

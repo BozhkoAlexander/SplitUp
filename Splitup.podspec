@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Splitup'
-  s.version          = '0.1.11'
+  s.version          = '0.1.12'
   s.summary          = 'Splitup serves to add vertical split view controllers to the iOS application'
 
 # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ Splitup is Swift library which serves to add vertical split view controllers to 
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
 
   s.source_files = 'Splitup/Classes/**/*'
   #s.resources = ['Splitup/Assets/*']
