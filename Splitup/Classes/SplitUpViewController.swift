@@ -127,8 +127,7 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
         case .rollUp:
             let progress = splitUpView.updateTransitionProgress(pan: pan)
             if pan.state == .cancelled || pan.state == .ended {
-                let velocity = pan.velocity(in: splitUpView).y
-                let complete = progress > 0.5 || velocity < 0
+                let complete = progress > 0.27
                 splitUpView.finishTransition(complete, pan: pan)
             }
         case .up where pan.state == .began:
@@ -140,8 +139,7 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
         case .rollDown:
             let progress = splitUpView.updateTransitionProgress(pan: pan)
             if pan.state == .cancelled || pan.state == .ended {
-                let velocity = pan.velocity(in: splitUpView).y
-                let complete = progress > 0.5 || velocity > 0
+                let complete = progress > 0.27
                 splitUpView.finishTransition(complete, pan: pan)
             }
         default: break
@@ -156,7 +154,8 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
     }
     
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return (gestureRecognizer.view as? SplitUpContainer)?.scrollView == otherGestureRecognizer.view
+        guard let scrollView = (gestureRecognizer.view as? SplitUpContainer)?.scrollView, let otherView = otherGestureRecognizer.view else { return true }
+        return scrollView == otherView || otherView.isDescendant(of: scrollView)
     }
 
 }
