@@ -42,10 +42,16 @@ class ListViewController: UIViewController, SplitUpContainerConfig, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.item == 1 {
+            return ListCell.cellSize(for: collectionView)
+        }
         return CollectionViewCell.cellSize(for: collectionView)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.item == 1 {
+            return collectionView.dequeueReusableCell(withReuseIdentifier: ListCell.cellId, for: indexPath)
+        }
         return collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.cellId, for: indexPath)
     }
     

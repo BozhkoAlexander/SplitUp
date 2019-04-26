@@ -24,6 +24,7 @@ class DetailsView: UIView, UICollectionViewDelegateFlowLayout {
         view.backgroundColor = UIColor.groupTableViewBackground
         
         view.register(CollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCell.cellId)
+        view.register(ListCell.self, forCellWithReuseIdentifier: ListCell.cellId)
         
         view.delegate = vc
         view.dataSource = vc
