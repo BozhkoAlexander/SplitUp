@@ -127,7 +127,7 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
         case .rollUp:
             let progress = splitUpView.updateTransitionProgress(pan: pan)
             if pan.state == .cancelled || pan.state == .ended {
-                let complete = progress > 0.27
+                let complete = progress > 0.20
                 splitUpView.finishTransition(complete, pan: pan)
             }
         case .up where pan.state == .began:
@@ -139,7 +139,7 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
         case .rollDown:
             let progress = splitUpView.updateTransitionProgress(pan: pan)
             if pan.state == .cancelled || pan.state == .ended {
-                let complete = progress > 0.27
+                let complete = progress > 0.20
                 splitUpView.finishTransition(complete, pan: pan)
             }
         default: break
