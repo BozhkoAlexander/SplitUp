@@ -47,7 +47,7 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
     public let frontViewController: SplitUpContainerViewController
     
     public var config: Config {
-        get { splitUpView.config }
+        get { return splitUpView.config }
         set { splitUpView.config = newValue }
     }
     
@@ -61,13 +61,16 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
     
     var splitUpView: SplitUpView! { return view as? SplitUpView }
     
+    var startConfig: SplitUpViewController.Config
+    
     // MARK: Life cycle
     
     public init(config: Config, rear rvc: SplitUpContainerViewController?, front fvc: SplitUpContainerViewController) {
-        self.config = config
+        self.startConfig = config
         self.rearViewController = rvc
         self.frontViewController = fvc
         super.init(nibName: nil, bundle: nil)
+
         if let rvc = rvc {
             addChild(rvc)
         }

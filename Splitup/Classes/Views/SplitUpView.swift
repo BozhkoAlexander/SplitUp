@@ -62,7 +62,7 @@ class SplitUpView: UIView {
     // MARK: Life cycle
     
     init(for vc: SplitUpViewController) {
-        self.config = vc.config
+        self.config = vc.startConfig
         super.init(frame: .zero)
         
         backgroundColor = .clear
