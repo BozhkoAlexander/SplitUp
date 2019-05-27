@@ -14,7 +14,7 @@ class SplitUpView: UIView {
     
     var state: SplitUpViewController.State = .down
     
-    private let config: SplitUpViewController.Config
+    var config: SplitUpViewController.Config
     
     // MARK: Properties
     

@@ -46,7 +46,10 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
     
     public let frontViewController: SplitUpContainerViewController
     
-    public var config: Config
+    public var config: Config {
+        get { splitUpView.config }
+        set { splitUpView.config = newValue }
+    }
     
     private var transition: SplitUpTransition? = nil
     
