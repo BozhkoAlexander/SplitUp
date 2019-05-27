@@ -24,9 +24,9 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
     
     public struct Config {
         
-        var topOffset: CGFloat
+        public var topOffset: CGFloat
         
-        var bottomOffset: CGFloat
+        public var bottomOffset: CGFloat
         
         public init(topOffset: CGFloat, bottomOffset: CGFloat) {
             self.topOffset = topOffset
@@ -46,7 +46,7 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
     
     public let frontViewController: SplitUpContainerViewController
     
-    public let config: Config
+    public var config: Config
     
     private var transition: SplitUpTransition? = nil
     

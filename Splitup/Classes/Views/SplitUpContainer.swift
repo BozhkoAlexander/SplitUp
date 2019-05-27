@@ -36,7 +36,7 @@ public class SplitUpContainer: UIView {
     
     // MARK: Public properties
     
-    public let config: Config
+    public var config: Config
     
     public weak var view: UIView! = nil
     
