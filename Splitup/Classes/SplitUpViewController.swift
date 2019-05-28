@@ -93,12 +93,17 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
     }
     
     @objc func didChangeState() {
+        splitUpDidChangeState(state)
         if state == .down && rearViewController == nil {
             dismiss(animated: true, completion: nil)
         }
     }
     
     // MARK: Interactive dismissal
+    
+    open func splitUpDidChangeState(_ state: State) {
+        print("INFO: Override splitUpDidChangeState(:_) without super call")
+    }
     
     open func prepareInteractiveDismiss(with pan: UIPanGestureRecognizer) {
         print("INFO: Override prepareInteractiveDismiss(with:_) without super call")
