@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Splitup'
-  s.version          = '0.1.19'
+  s.version          = '0.1.20'
   s.summary          = 'Splitup serves to add vertical split view controllers to the iOS application'
 
 # This description is used to generate tags and improve search results.
