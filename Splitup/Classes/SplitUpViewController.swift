@@ -117,6 +117,12 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
         print("INFO: Override finishInteractiveDismiss(with:_) without super call")
     }
     
+    // MARK: UI actions
+    
+    @objc func closePressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: Gesture handlers
     
     @objc func handlePan(_ pan: UIPanGestureRecognizer) {

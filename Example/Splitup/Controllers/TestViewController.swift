@@ -31,8 +31,8 @@ class TestViewController: UIViewController {
     
     @objc func detailsPressed(_ sender: UIButton) {
         let vc = SplitUpViewController(
-            config: SplitUpViewController.Config(topOffset: 64, bottomOffset: 0),
-            rear: nil,
+            config: SplitUpViewController.Config(topOffset: 64, bottomOffset: 200),
+            rear: PosterViewController(),
             front: DetailsViewController()
         )
         present(vc, animated: true)

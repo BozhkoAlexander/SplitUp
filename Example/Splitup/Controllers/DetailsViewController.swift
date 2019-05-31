@@ -32,6 +32,14 @@ class DetailsViewController: UIViewController, SplitUpContainerConfig, UICollect
         view = DetailsView(for: self)
     }
     
+    // MARK: UI actions
+    
+    @objc func refresh(_ sender: UIRefreshControl) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            sender.endRefreshing()
+        }
+    }
+    
     // MARK: Table view data source
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

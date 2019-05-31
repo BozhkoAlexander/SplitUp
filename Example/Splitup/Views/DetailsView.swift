@@ -28,7 +28,12 @@ class DetailsView: UIView, UICollectionViewDelegateFlowLayout {
         
         view.delegate = vc
         view.dataSource = vc
-                
+        
+        if #available(iOS 10.0, *) {
+            view.refreshControl = UIRefreshControl()
+            view.refreshControl?.addTarget(vc, action: #selector(vc.refresh(_:)), for: .valueChanged)
+        }
+        
         addSubview(view)
         collectionView = view
     }

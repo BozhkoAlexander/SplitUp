@@ -72,7 +72,10 @@ class SplitUpView: UIView {
             setupContainer(&rearContainer, for: rvc, animateRollIndicator: animate)
         }
         setupContainer(&frontContainer, for: vc.frontViewController, animateRollIndicator: animate)
-        
+
+        rearContainer?.closeButton?.addTarget(vc, action: #selector(vc.closePressed(_:)), for: .touchUpInside)
+        frontContainer?.closeButton?.addTarget(vc, action: #selector(vc.closePressed(_:)), for: .touchUpInside)
+
         setupPan(for: vc)
         
         target = vc
