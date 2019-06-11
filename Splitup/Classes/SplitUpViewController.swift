@@ -128,8 +128,9 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
     @objc func handlePan(_ pan: UIPanGestureRecognizer) {
         switch state {
         case .down where pan.state == .began:
-            let velocity = pan.velocity(in: view).y
-            if velocity < 0 {
+            let velocity = pan.velocity(in: view)
+            guard abs(velocity.y) > abs(velocity.x) else { break }
+            if velocity.y < 0 {
                 state = .rollUp
                 splitUpView.updateTransitionProgress(pan: pan)
             } else {
