@@ -153,11 +153,8 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
                 splitUpView.finishTransition(complete, pan: pan)
             }
         case .up where pan.state == .began:
-            let velocity = pan.velocity(in: view).y
-            if velocity > 0 {
-                state = .rollDown
-                splitUpView.updateTransitionProgress(pan: pan)
-            }
+            state = .rollDown
+            splitUpView.updateTransitionProgress(pan: pan)
         case .rollDown:
             let progress = splitUpView.updateTransitionProgress(pan: pan)
             if pan.state == .cancelled || pan.state == .ended {

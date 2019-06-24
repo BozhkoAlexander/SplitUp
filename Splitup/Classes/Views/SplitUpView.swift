@@ -22,6 +22,8 @@ class SplitUpView: UIView {
     
     private var didChangeStateAction: Selector? = nil
     
+    private var startContentOffset: CGFloat = 0
+    
     // MARK: Subviews
 
     weak var rearContainer: SplitUpContainer? = nil
@@ -186,7 +188,7 @@ class SplitUpView: UIView {
             minY += safeAreaInsets.top
             maxY -= safeAreaInsets.bottom
         }
-        let dY = pan.translation(in: self).y
+        var dY = pan.translation(in: self).y
         
         switch state {
         case .rollUp:
@@ -200,8 +202,13 @@ class SplitUpView: UIView {
             setRollStateAnimated(progress > 0 ? .line : .arrow)
             return progress
         case .rollDown:
+            if let scrollView = frontContainer.scrollView, startContentOffset == 0 && scrollView.contentOffset.y > 0 {
+                startContentOffset = scrollView.contentOffset.y
+            }
+            dY -= startContentOffset
             frontContainer.frame.origin.y = min(max(minY, minY + dY), maxY)
             let progress = max(0, min(1, dY / (maxY - minY)))
+            frontContainer.scrollView?.isScrollEnabled = progress == 0
             if let shadeView = rearContainer?.shadeView {
                 shadeView.alpha = 0.8 - progress * 0.8
             } else {
@@ -263,6 +270,7 @@ class SplitUpView: UIView {
         frontContainer.scrollView?.isScrollEnabled = true
         
         frontContainer.rollIndicator?.setForm(rollState, animated: true)
+        startContentOffset = 0
     }
     
     func shouldStartTransition(pan: UIPanGestureRecognizer) -> Bool {
@@ -272,13 +280,7 @@ class SplitUpView: UIView {
                 frontContainer.scrollView?.isScrollEnabled = false
                 return true
             case .up:
-                guard let scrollView = frontContainer.scrollView else { return true }
-                let velocity = pan.velocity(in: self).y
-                let shouldStart = scrollView.contentOffset.y <= 0 && velocity > 0
-                if shouldStart {
-                    scrollView.isScrollEnabled = false
-                }
-                return shouldStart
+                return true
             default:
                 return false
             }
