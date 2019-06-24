@@ -42,6 +42,10 @@ open class SplitUpViewController: UIViewController, UIGestureRecognizerDelegate 
         set { splitUpView.state = newValue }
     }
     
+    public var rollIndicator: RollIndicatorView? {
+        return splitUpView.frontContainer.rollIndicator
+    }
+    
     public var rearViewController: SplitUpContainerViewController?
     
     public let frontViewController: SplitUpContainerViewController

@@ -23,18 +23,20 @@ class TestViewController: UIViewController {
     
     @objc func testPressed(_ sender: UIButton) {
         guard let rollView = testView.rollView else { return }
-        switch rollView.state {
-        case .line: rollView.setState(.arrow, animated: true)
-        case .arrow: rollView.setState(.line, animated: true)
+        switch rollView.form {
+        case .line: rollView.setForm(.arrow, animated: true)
+        case .arrow: rollView.setForm(.line, animated: true)
         }
     }
     
     @objc func detailsPressed(_ sender: UIButton) {
+        let front = DetailsViewController()
         let vc = SplitUpViewController(
             config: SplitUpViewController.Config(topOffset: 64, bottomOffset: 200),
             rear: PosterViewController(),
-            front: DetailsViewController()
+            front: front
         )
+        vc.rollIndicator?.addTarget(front, action: #selector(front.closePressed), for: .touchUpInside)
         present(vc, animated: true)
     }
 

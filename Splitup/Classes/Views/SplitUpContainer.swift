@@ -112,7 +112,7 @@ public class SplitUpContainer: UIView {
         view.tintColor = UIColor.lightGray
         
         if config.animateRollIndicator {
-            view.setState(.arrow, animated: false)
+            view.setForm(.arrow, animated: false)
         }
         
         addSubview(view)

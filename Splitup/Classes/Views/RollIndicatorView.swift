@@ -8,9 +8,9 @@
 
 import UIKit
 
-open class RollIndicatorView: UIView {
+open class RollIndicatorView: UIControl {
     
-    public enum State {
+    public enum Form {
         
         case arrow
         
@@ -26,7 +26,7 @@ open class RollIndicatorView: UIView {
     
     public static let size = CGSize(width: 48, height: 24)
     
-    public var state: State = .line
+    public var form: Form = .line
     
     open override var frame: CGRect {
         get {
@@ -78,11 +78,11 @@ open class RollIndicatorView: UIView {
     // MARK: Paths
     
     private var currentPath: UIBezierPath {
-        return path(for: state)
+        return path(for: form)
     }
     
-    private func path(for state: State) -> UIBezierPath {
-        switch state {
+    private func path(for form: Form) -> UIBezierPath {
+        switch form {
         case .line: return linePath(for: bounds)
         case .arrow: return arrowPath(for: bounds)
         }
@@ -125,10 +125,10 @@ open class RollIndicatorView: UIView {
     
     // MARK: Public methods
     
-    open func setState(_ state: State, animated: Bool) {
-        guard state != self.state else { return }
+    open func setForm(_ form: Form, animated: Bool) {
+        guard form != self.form else { return }
         let startPath = currentPath
-        let endPath = path(for: state)
+        let endPath = path(for: form)
         
         if animated {
             let anim = CABasicAnimation(keyPath: "path")
@@ -140,9 +140,9 @@ open class RollIndicatorView: UIView {
             anim.isRemovedOnCompletion = false
             
             shapeLayer.add(anim, forKey: nil)
-            self.state = state
+            self.form = form
         } else {
-            self.state = state
+            self.form = form
             shapeLayer.path = endPath.cgPath
         }
 

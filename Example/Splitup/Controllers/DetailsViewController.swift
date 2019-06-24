@@ -40,6 +40,10 @@ class DetailsViewController: UIViewController, SplitUpContainerConfig, UICollect
         }
     }
     
+    @objc func closePressed() {
+        dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: Table view data source
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

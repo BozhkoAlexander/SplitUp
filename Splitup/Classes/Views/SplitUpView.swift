@@ -124,7 +124,7 @@ class SplitUpView: UIView {
         
         var y: CGFloat = 0
         var alpha: CGFloat = 0
-        var rollState: RollIndicatorView.State = .line
+        var rollState: RollIndicatorView.Form = .line
         
         switch state {
         case .up:
@@ -170,12 +170,12 @@ class SplitUpView: UIView {
         rearContainer?.scrollView?.isScrollEnabled = true
         frontContainer.scrollView?.isScrollEnabled = true
         
-        frontContainer.rollIndicator?.setState(rollState, animated: animated)
+        frontContainer.rollIndicator?.setForm(rollState, animated: animated)
     }
     
-    private func setRollStateAnimated(_ state: RollIndicatorView.State) {
+    private func setRollStateAnimated(_ state: RollIndicatorView.Form) {
         guard frontContainer.config.animateRollIndicator else { return }
-        frontContainer.rollIndicator?.setState(state, animated: true)
+        frontContainer.rollIndicator?.setForm(state, animated: true)
     }
     
     @discardableResult
@@ -217,7 +217,7 @@ class SplitUpView: UIView {
     func finishTransition(_ complete: Bool, pan: UIPanGestureRecognizer) {
         var y: CGFloat = 0
         var alpha: CGFloat = 0
-        var rollState: RollIndicatorView.State = .line
+        var rollState: RollIndicatorView.Form = .line
         
         switch state {
         case .rollUp where complete,
@@ -262,7 +262,7 @@ class SplitUpView: UIView {
         rearContainer?.scrollView?.isScrollEnabled = true
         frontContainer.scrollView?.isScrollEnabled = true
         
-        frontContainer.rollIndicator?.setState(rollState, animated: true)
+        frontContainer.rollIndicator?.setForm(rollState, animated: true)
     }
     
     func shouldStartTransition(pan: UIPanGestureRecognizer) -> Bool {
