@@ -202,8 +202,11 @@ class SplitUpView: UIView {
             setRollStateAnimated(progress > 0 ? .line : .arrow)
             return progress
         case .rollDown:
-            if let scrollView = frontContainer.scrollView, startContentOffset == 0 && scrollView.contentOffset.y > 0 {
-                startContentOffset = scrollView.contentOffset.y
+            if let scrollView = frontContainer.scrollView, scrollView.contentOffset.y > 0 {
+                if startContentOffset == 0 {
+                    startContentOffset = scrollView.contentOffset.y
+                }
+                return 0
             }
             dY -= startContentOffset
             frontContainer.frame.origin.y = min(max(minY, minY + dY), maxY)
